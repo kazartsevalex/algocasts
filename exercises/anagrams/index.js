@@ -8,6 +8,49 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+  stringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+
+  return stringA === stringB;
+
+
+
+  // stringA = stringA.replace(/[^\w]/g, '').toLowerCase();
+  // stringB = stringB.replace(/[^\w]/g, '').toLowerCase();
+  //
+  // if (stringA.length !== stringB.length) return false;
+  //
+  // const a = stringA.split('').sort();
+  // const b = stringB.split('').sort();
+  //
+  // return a.every((char, i) => char === b[i]);
+
+
+
+
+  // const a_counts = getCounts(stringA);
+  // const b_counts = getCounts(stringB);
+  //
+  // if (Object.keys(a_counts).length !== Object.keys(b_counts).length) return false;
+  //
+  // for (let char in a_counts) {
+  //   if (a_counts[char] !== b_counts[char]) return false;
+  // }
+  //
+  // return true;
+  //
+  // function getCounts(str) {
+  //   const charMap = {};
+  //
+  //   str = str.replace(/[^\w]/g, '').toLowerCase();
+  //
+  //   for (let char of str) {
+  //     charMap[char] = charMap[char] + 1 || 1;
+  //   }
+  //
+  //   return charMap;
+  // }
+}
 
 module.exports = anagrams;
