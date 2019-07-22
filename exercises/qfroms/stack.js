@@ -3,16 +3,16 @@ class Stack {
     this.data = [];
   }
 
-  push(record) {
-    this.data.push(record);
+  push(n) {
+    this.data.unshift(n);
   }
 
-  pop() {
-    return this.data.pop();
+  pop(n) {
+    return this.data.shift(n);
   }
 
   peek() {
-    return this.data[this.data.length - 1];
+    return this.data[0];
   }
 }
 
